@@ -1,0 +1,18 @@
+import { Address } from "../value-objects/address.vo"
+import { User } from "./user"
+
+export class Order {
+    id: string;
+    user: User;
+    address?: Address;
+
+    constructor(id: string, user: User, address?: Address) {
+        this.id = id;
+        this.user = user;
+        if(!address) {
+            throw new Error("you should register an address before ordering anything!");
+        }
+        this.address = address;
+    }
+
+}
