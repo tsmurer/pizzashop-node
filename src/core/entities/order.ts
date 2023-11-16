@@ -1,14 +1,17 @@
 import { Address } from "../value-objects/address.vo"
+import { OrderItem } from "../value-objects/order-item.vo";
 import { User } from "./user"
 
 export class Order {
     private id: string;
     private user: User;
     private address?: Address;
+    private orderItems: OrderItem[]
 
-    constructor(id: string, user: User, address?: Address) {
+    constructor(id: string, user: User, orderItem: OrderItem, address?: Address) {
         this.id = id;
         this.user = user;
+        this.orderItems = [orderItem]; 
         if(!address) {
             throw new Error("you should register an address before ordering anything!");
         }

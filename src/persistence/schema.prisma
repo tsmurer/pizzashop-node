@@ -1,0 +1,30 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// everything is either numbers or strings, so stuff should be encoded and decoded with separators etc.
+
+model User {
+  id                Int         @default(autoincrement()) @id
+  username          String?
+  email             String      @unique
+  password          String
+  addresses         String
+  order             String
+  currentAddress    String
+}
+
+// Define the `Post` table in the database
+model Order {
+  id            Int     @default(autoincrement()) @id
+  user          String
+  orderitems    String 
+  address       String
+}
+
+model Item {
+  id            Int     @default(autoincrement()) @id
+  name          String
+  description   String 
+}
