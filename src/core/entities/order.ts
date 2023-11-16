@@ -30,5 +30,9 @@ export class Order {
     getAddress(): Address | undefined {
         return this.address;
     }
+
+    getOrderItems(): OrderItem[] {
+        return this.orderItems;
+    }
   
 }
