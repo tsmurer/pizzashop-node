@@ -7,7 +7,7 @@ export default function useRoutes(app: Express) {
       });
 
     app.get('/user', (req: Request, res: Response) => {
-        res.send('USER');
+        res.send('testing user endpoint');
       });
       
 }
