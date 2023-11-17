@@ -2,7 +2,6 @@ import { Address } from "../value-objects/address.vo";
 import { Order } from "./order"
 
 export class User {
-    private id: string;
     private username: string;
     private email: string;
     private addresses: Address[];
@@ -10,8 +9,7 @@ export class User {
     private password: string;
     private order?: Order;
   
-    constructor(id: string, username: string, email: string, password: string) {
-      this.id = id;
+    constructor(username: string, email: string, password: string) {
       this.username = username;
       this.email = email;
       this.password = password; // Password should be securely hashed and salted in a real application.
@@ -19,10 +17,7 @@ export class User {
       this.order = undefined;
       this.currentAddress = undefined;
     }
-  
-    getId(): string {
-      return this.id;
-    }
+
   
     getUsername(): string {
       return this.username;

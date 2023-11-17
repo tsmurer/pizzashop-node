@@ -2,11 +2,11 @@
   "name": "pizzashop-server",
   "version": "1.0.0",
   "description": "pizzashop server with node js",
-  "main": "index.ts",
+  "main": "./dist/index.cjs",
   "type": "module",
   "scripts": {
     "start": "tsx ./src/index.ts",
-    "build": "tsup src",
+    "build": "tsup src/index.ts",
     "test": "jasmine"
   },
   "author": "tsmurer",

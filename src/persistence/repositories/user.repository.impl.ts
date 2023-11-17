@@ -16,7 +16,7 @@ export class UserRepositoryImpl implements UserRepository {
         const encodedCurrentAddress = JSON.stringify(getCurrentAddress);
     
         // Save user to the database
-        await prisma.user.create({
+        return await prisma.user.create({
           data: {
             ...userData,
             addresses: encodedAddresses,
