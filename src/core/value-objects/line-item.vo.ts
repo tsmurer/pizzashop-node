@@ -1,6 +1,6 @@
 import { Item } from "../entities/item";
 
-export class OrderItem {
+export class LineItem {
     private item: Item;
     private quantity: number;
 

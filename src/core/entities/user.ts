@@ -1,28 +1,27 @@
+import { AddressData } from "../value-objects/address-data.vo";
 import { Address } from "../value-objects/address.vo";
 import { Email } from "./email";
 import { Name } from "./name";
 import { Order } from "./order"
 
 export class User {
-    public readonly id: string;
+    public readonly id: number;
     public readonly name: Name;
     public readonly email: Email;
-    public readonly addresses: Address[];
-    public readonly currentAddress?: Address;
+    public readonly addressData: AddressData;
     public readonly password: string;
     public readonly order?: Order;
   
-    constructor(id: string, name:Name, email: Email, password: string) {
+    constructor(id: number, name:Name, email: Email, password: string) {
       this.id = id;
       this.name = name;
       this.email = email;
-      this.password = password; // Password should be securely hashed and salted in a real application.
-      this.addresses = [];
+      this.password = password; // Password should be securely hashed and salted.
       this.order = undefined;
-      this.currentAddress = undefined;
+      this.addressData = new AddressData();
     }
   
-    getId(): string {
+    getId(): number {
       return this.id;
     }
   
@@ -34,12 +33,8 @@ export class User {
         return this.order;
     }
 
-    getCurrentAddress(): Address | undefined {
-        return this.currentAddress;
-    }
-
-    getAddresses(): Address[] {
-        return this.addresses;
+    getAddressData(): AddressData {
+        return this.addressData;
     }
 
     authenticate(inputPassword: string): boolean {
