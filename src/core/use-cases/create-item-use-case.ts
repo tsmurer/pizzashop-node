@@ -7,5 +7,5 @@ export async function createItemUseCase(itemDTO: ItemDTO): Promise<void>{
     const itemRepository = new PrismaItemRepository(new PrismaClient)
     const item = mapItemDtoToItem(itemDTO)
     const savedItem = itemRepository.create(item);
-    console.log(savedItem);
+    savedItem.then(item => console.log(item));
 }

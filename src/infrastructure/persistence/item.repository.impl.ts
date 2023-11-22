@@ -14,6 +14,7 @@ export class PrismaItemRepository implements ItemRepository {
             data: {
               name: item.getName(),
               description: item.getDescription(),
+              price: item.getPrice()
             },
           })
         

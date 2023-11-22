@@ -7,9 +7,10 @@ export function mapItemToItemDto(item: Item): ItemDTO {
       id: item.getId(),
       name: item.getName(),
       description: item.getDescription(),
+      price: item.getPrice()
     };
   }
 
 export function mapItemDtoToItem(itemDto:ItemDTO) {
-    return new Item(itemDto.id, itemDto.name, itemDto.description);
+    return new Item(itemDto.id, itemDto.name, itemDto.description, itemDto.price);
 }

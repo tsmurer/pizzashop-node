@@ -1,16 +1,19 @@
 export class Item{
-    private id: string;
+    private id: number;
     private name: string;
     private description: string;
+    private price: number;
 
-    constructor(id: string, name: string, description: string) {
+    constructor(id: number, name: string, description: string, price:number) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.price = price;
+        
     }
 
      
-    getId(): string {
+    getId(): number {
         return this.id;
     }
     
@@ -20,6 +23,10 @@ export class Item{
     
     getDescription(): string {
         return this.description;
+    }
+
+    getPrice(): number {
+        return this.price;
     }
   
 }

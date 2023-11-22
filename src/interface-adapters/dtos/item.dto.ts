@@ -1,5 +1,6 @@
 export interface ItemDTO {
-    id: string,
+    id: number,
     name: string,
-    description: string
+    description: string,
+    price: number
 }
