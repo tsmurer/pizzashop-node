@@ -2,3 +2,4 @@ node_modules/
 dist/
 .env
 urls.txt
+migrations/

@@ -1,4 +1,5 @@
 import { Request, Response, Express } from 'express';
+import { createItemUseCase } from '../../core/use-cases/create-item-use-case';
 
 export default function useRoutes(app: Express) {
 
@@ -13,6 +14,7 @@ export default function useRoutes(app: Express) {
     app.post('/create-item', function(req, res) {
         console.log('receiving data ...');
         console.log('body is ',req.body);
+        createItemUseCase(req.body)
         res.send(req.body);
     });
       
