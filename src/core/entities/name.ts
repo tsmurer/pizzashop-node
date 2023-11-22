@@ -6,4 +6,10 @@ export class Name {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    getFullName(): String {
+        return this.lastName + ", " + this.firstName
+    }
+    isValidName(name: String) {
+    }
 }

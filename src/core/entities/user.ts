@@ -1,18 +1,20 @@
 import { Address } from "../value-objects/address.vo";
+import { Email } from "./email";
+import { Name } from "./name";
 import { Order } from "./order"
 
 export class User {
-    private id: string;
-    private username: string;
-    private email: string;
-    private addresses: Address[];
-    private currentAddress?: Address;
-    private password: string;
-    private order?: Order;
+    public readonly id: string;
+    public readonly name: Name;
+    public readonly email: Email;
+    public readonly addresses: Address[];
+    public readonly currentAddress?: Address;
+    public readonly password: string;
+    public readonly order?: Order;
   
-    constructor(id: string, username: string, email: string, password: string) {
+    constructor(id: string, name:Name, email: Email, password: string) {
       this.id = id;
-      this.username = username;
+      this.name = name;
       this.email = email;
       this.password = password; // Password should be securely hashed and salted in a real application.
       this.addresses = [];
@@ -24,12 +26,8 @@ export class User {
       return this.id;
     }
   
-    getUsername(): string {
-      return this.username;
-    }
-  
-    getEmail(): string {
-      return this.email;
+    getEmail(): String {
+      return this.email.getAddress();
     }
 
     getOrder(): Order | undefined {
